@@ -89,7 +89,7 @@ const Nav = () => {
                     <Link
                       href={link.link}
                       className={classnames(
-                        "text-lg font-medium transition-all duration-300",
+                        "text-lg font-normal transition-all duration-300",
                         link.link === pathname
                           ? "text-[#8a2be2] font-bold"
                           : "text-[var(--text-color)] hover:text-[var(--span-color)] transition-all duration-300"

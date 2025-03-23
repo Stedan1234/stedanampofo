@@ -20,7 +20,7 @@ const Footer = () => {
     ];
 
   return (
-    <footer className="footer justify-start lg:justify-evenly md:justify-evenly sm:footer-horizontal bg-[var(--background-color)] text-[var(--text-color)] p-10">
+    <footer className="footer justify-start lg:justify-between md:justify-evenly sm:footer-horizontal bg-[var(--background-color)] text-[var(--text-color)] py-10">
       <aside>
             <Link href="/" className="flex items-center justify-start">
               <Image
