@@ -7,24 +7,33 @@ import { CgMenu } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
 import classnames from "classnames";
 import { usePathname } from "next/navigation";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 const Nav = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("up");
+  const [lastScrollTop, setLastScrollTop] = useState(0);
   const pathname = usePathname();
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef(null);
 
   const toggleNavbar = () => {
-    setMobileDrawerOpen(!mobileDrawerOpen);
+    setMobileDrawerOpen((prev) => !prev);
   };
 
   useEffect(() => {
-    if (mobileDrawerOpen) {
-      document.body.style.overflow = "hidden";
-      mobileMenuRef.current?.querySelector("a")?.focus();
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [mobileDrawerOpen]);
+    const handleScroll = () => {
+      const currentScrollTop = window.scrollY;
+      if (currentScrollTop > lastScrollTop + 10) {
+        setScrollDirection("down");
+      } else if (currentScrollTop < lastScrollTop - 10) {
+        setScrollDirection("up");
+      }
+      setLastScrollTop(currentScrollTop);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollTop]);
 
   const navLinks = [
     { id: 1, name: "Home", link: "/" },
@@ -33,90 +42,133 @@ const Nav = () => {
     { id: 4, name: "Contact", link: "/contact" },
   ];
 
-  return (
-    <nav className="fixed top-4 z-50 w-[90%] left-1/2 transform -translate-x-1/2 py-3 backdrop-brightness-80 backdrop-blur-md rounded-full shadow-lg">
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <Image
-            src={Logo1}
-            alt="Logo"
-            width={200}
-            height={90}
-            className="lg:block object-contain"
-          />
-        </Link>
-
-        {/* Desktop Nav Links */}
-        <ul className="hidden lg:flex gap-8">
-          {navLinks.map((link) => (
-            <li key={link.id}>
-              <Link
-                href={link.link}
-                className={classnames({
-                  "text-[#8a2be2]": link.link === pathname,
-                  "text-[#f5f5f5]": link.link !== pathname,
-                  "hover:text-[#8a2be2] transition-colors": true,
-                })}
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden p-2 focus:outline-none"
-          onClick={toggleNavbar}
-          aria-label="Toggle Navigation Menu"
-          aria-expanded={mobileDrawerOpen}
-        >
-          {mobileDrawerOpen ? (
-            <AiOutlineClose className="text-2xl text-white" />
-          ) : (
-            <CgMenu className="text-2xl text-white" />
+    const socials = [
+      { id: 1, icon: <FaGithub />, link: "https://www.github.com/Stedan1234" },
+      {
+        id: 2,
+        icon: <FaLinkedin />,
+        link: "https://www.linkedin.com/in/stedan-ampofo-235820230",
+      },
+      {
+        id: 3,
+        icon: <FaInstagram />,
+        link: "https://www.instagram.com/stedan.webdev/#",
+      },
+    ];
+  
+    return (
+      <>
+        {/* Navbar */}
+        <nav
+          className={classnames(
+            "w-full bg-[var(--background-color)] shadow-md z-50 fixed top-0 left-0 transition-transform duration-300",
+            {
+              "-translate-y-full":
+                scrollDirection === "down" && !mobileDrawerOpen,
+              "translate-y-0": scrollDirection === "up" || mobileDrawerOpen,
+            }
           )}
-        </button>
-      </div>
+        >
+          <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src={Logo1}
+                alt="Logo"
+                width={200}
+                height={90}
+                className="lg:block object-contain"
+              />
+            </Link>
 
-      {/* Mobile Menu */}
-      <div
-        ref={mobileMenuRef}
-        className={classnames(
-          "lg:hidden fixed top-20 left-1/2 transform -translate-x-1/2 w-[90%] bg-black backdrop-blur-sm rounded-lg shadow-lg transition-all duration-300",
-          {
-            "opacity-0 translate-y-[-20px] pointer-events-none":
-              !mobileDrawerOpen,
-            "opacity-100 translate-y-0": mobileDrawerOpen,
-          }
-        )}
-      >
-        <ul className="flex flex-col items-center py-6 space-y-4">
-          {navLinks.map((link) => (
-            <li key={link.id}>
-              <Link
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex gap-6">
+              <ul className="flex gap-4">
+                {navLinks.map((link) => (
+                  <li key={link.id}>
+                    <Link
+                      href={link.link}
+                      className={classnames(
+                        "text-lg font-medium transition-all duration-300",
+                        link.link === pathname
+                          ? "text-[#8a2be2] font-bold"
+                          : "text-[var(--text-color)] hover:text-[var(--span-color)] transition-all duration-300"
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              {/* Social Icons */}
+              <ul className="flex gap-4">
+                {socials.map((link) => (
+                  <li key={link.id}>
+                    <a
+                      href={link.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xl text-[var(--text-color)] hover:text-[var(--span-color)] transition-all duration-300"
+                    >
+                      {link.icon}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button className="lg:hidden p-2" onClick={toggleNavbar}>
+              {mobileDrawerOpen ? (
+                <AiOutlineClose className="text-2xl text-[var(--text-color)]" />
+              ) : (
+                <CgMenu className="text-2xl text-[var(--text-color)]" />
+              )}
+            </button>
+          </div>
+        </nav>
+
+        {/* Mobile Menu - Stays Fixed, Allows Page Scrolling */}
+        <div
+          ref={mobileMenuRef}
+          className={classnames(
+            "fixed top-[60px] left-0 w-full bg-[var(--background-color)] shadow-md transition-all duration-300 z-40 overflow-hidden",
+            {
+              "max-h-0 opacity-0": !mobileDrawerOpen,
+              "max-h-screen opacity-100": mobileDrawerOpen,
+            }
+          )}
+        >
+          <ul className="flex flex-col items-start px-6 py-4 space-y-4">
+            {navLinks.map((link) => (
+              <li key={link.id}>
+                <Link
+                  href={link.link}
+                  onClick={toggleNavbar}
+                  className="text-lg font-medium text-[var(--text-color)] hover:text-[var(--span-color)] transition-all duration-300"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Social Icons - Shown in Mobile */}
+          <div className="flex justify-start px-6 space-x-4 pb-4">
+            {socials.map((link) => (
+              <a
+                key={link.id}
                 href={link.link}
-                onClick={toggleNavbar}
-                className={classnames({
-                  "text-[#8a2be2]": link.link === pathname,
-                  "text-[#f5f5f5]": link.link !== pathname,
-                  "hover:text-[#8a2be2] transition-colors": true,
-                })}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-color)] hover:text-[var(--span-color)] text-xl transition-all duration-300"
               >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <div className="flex justify-center pb-6">
-          <button className="text-white bg-[#8a2e2] px-6 py-2 rounded-md text-sm font-medium">
-            Explore The Maps
-          </button>
+                {link.icon}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
-    </nav>
-  );
-};
-
+      </>
+    );
+  };
 export default Nav;

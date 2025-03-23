@@ -16,17 +16,16 @@ export const HeroHighlight = ({
   const mouseY = useMotionValue(0);
 
   // SVG patterns for different states and themes
-  const dotPatterns = {
-    light: {
-      default: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60' width='16' height='16' fill='none'%3E%3Ccircle fill='%737E82' id='pattern-circle' cx='10' cy='10' r='2.5'%3E%3C/circle%3E%3C/svg%3E")`,
-      hover: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' width='16' height='16' fill='none'%3E%3Ccircle fill='%737E82' id='pattern-circle' cx='10' cy='10' r='2.5'%3E%3C/circle%3E%3C/svg%3E")`,
-    },
-    dark: {
-      default: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 65 65' width='16' height='16' fill='none'%3E%3Ccircle fill='%23404040' id='pattern-circle' cx='10' cy='10' r='2.5'%3E%3C/circle%3E%3C/svg%3E")`,
-      hover: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25' width='16' height='16' fill='none'%3E%3Ccircle fill='%238183f4' id='pattern-circle' cx='10' cy='10' r='2.5'%3E%3C/circle%3E%3C/svg%3E")`,
-    },
-  };
-
+const dotPatterns = {
+  light: {
+    default: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='12' height='12' fill='none'%3E%3Ccircle fill='%23f1f1f1' cx='10' cy='10' r='2' filter='blur(0.5px)' opacity='0.7' /%3E%3C/svg%3E")`,
+    hover: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='12' height='12' fill='none'%3E%3Ccircle fill='%2393d5f4' cx='10' cy='10' r='2' filter='blur(0.5px)' opacity='0.8' /%3E%3C/svg%3E")`,
+  },
+  dark: {
+    default: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='12' height='12' fill='none'%3E%3Ccircle fill='%234f4f4f' cx='10' cy='10' r='2' filter='blur(0.5px)' opacity='0.5' /%3E%3C/svg%3E")`,
+    hover: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='12' height='12' fill='none'%3E%3Ccircle fill='%23636363' cx='10' cy='10' r='2' filter='blur(0.5px)' opacity='0.6' /%3E%3C/svg%3E")`,
+  },
+};
   function handleMouseMove({
     currentTarget,
     clientX,
