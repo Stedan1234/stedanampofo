@@ -2,7 +2,7 @@ import React from "react";
 import { RiNextjsFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
 import { GrMysql } from "react-icons/gr";
-import { FaGitAlt, FaHtml5 } from "react-icons/fa6";
+import { FaFigma, FaGitAlt, FaHtml5 } from "react-icons/fa6";
 import { VscVscode } from "react-icons/vsc";
 import { SiMongodb,  SiPostman, SiPrisma } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
@@ -90,6 +90,13 @@ const TechExpertise = () => {
       cat: "Frontend",
       icon: <FaHtml5 />,
     },
+    {
+      id: 13,
+      name: "Figma",
+      cat: "UI/UX",
+      icon: <FaFigma />,
+    },
+
   ];
 
   return (
@@ -97,12 +104,12 @@ const TechExpertise = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: [20, -5, 0] }}
       transition={{ duration: 0.5, ease: [0.4, 0.0, 0.2, 1] }}
-      className="w-full p-6"
+      className="w-full py-6"
     >
-    <section className="w-full p-6">
+    <section className="w-full py-6">
       <div className="inline-block my-6">
         <h2 className="text-2xl font-bold">Technical Expertise</h2>
-        <hr className="w-full border-t-2 border-[#8a2be2] mt-1" />
+        <hr className="w-full border-t-2 border-[var(--span-color)] mt-1" />
       </div>
       <div className="flex flex-col space-y-8">
         {["Frontend", "DatabaseManagement", "Methodologies"].map((category) => (
@@ -115,6 +122,10 @@ const TechExpertise = () => {
               ) : category === "DatabaseManagement" ? (
                 <>
                   <FaDatabase /> Database Management
+                </>
+              ) : category === "UI/UX" ? (
+                <>
+                  <FaFigma /> UI/UX Design
                 </>
               ) : (
                 <>

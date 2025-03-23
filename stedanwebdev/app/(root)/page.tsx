@@ -1,20 +1,18 @@
 "use client";
 import { HomeHero } from "../components/homeHero";
-import Nav from "../components/nav";
-import Footer from "../components/footer";
-import ScrollToTop from "../components/scrollToTop";
 import TechExpertise from "../components/techExpertise";
+import HomeServices from "../components/homeServices";
+import FeaturedProjects from "../components/featuredProjects";
 export default function Home() {
   return (
     <div>
-      <Nav />
       <HomeHero />
-        <div className="px-4 lg:px-20">
-      <TechExpertise />
-      <Footer />
-        <ScrollToTop />
+        <div className="px-[var(--page-padding-sm)] lg:px-[var(--page-padding-lg)]">
+        <TechExpertise />
+        <HomeServices />
+        <FeaturedProjects />
         </div>
-    </div>
+    </div>  
   );
 }
   

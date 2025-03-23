@@ -9,6 +9,8 @@
   --background-color: #f5f5f5;
   --text-color: #2e2e2e;
   --footer-text-color: #A3A3A3;
+  --page-padding-sm: 20px;
+  --page-padding-lg: 80px;
 }
 
 body {

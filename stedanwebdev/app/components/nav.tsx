@@ -145,7 +145,12 @@ const Nav = () => {
                 <Link
                   href={link.link}
                   onClick={toggleNavbar}
-                  className="text-lg font-medium text-[var(--text-color)] hover:text-[var(--span-color)] transition-all duration-300"
+                  className={classnames(
+                    "text-lg font-normal transition-all duration-300",
+                    link.link === pathname
+                      ? "text-[#8a2be2] font-bold"
+                      : "text-[var(--text-color)] hover:text-[var(--span-color)] transition-all duration-300"
+                  )}
                 >
                   {link.name}
                 </Link>
