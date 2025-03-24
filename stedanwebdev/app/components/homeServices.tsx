@@ -8,10 +8,10 @@ import {
 } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
-const services = [
+export const services = [
   {
     id: 1,
     title: "Custom Web & App Development",

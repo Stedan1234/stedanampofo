@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Logo1 from "../../public/logoLg.png";
+import { GiInfinity } from "react-icons/gi";
 import { CgMenu } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
 import classnames from "classnames";
@@ -80,6 +81,13 @@ const Nav = () => {
                 className="lg:block object-contain"
               />
             </Link>
+            {/* <Link href="/" className="flex items-center">
+              <p className="text-3xl font-bold text-[var(--text-color)]">
+                <span className="text-[var(--text-color)] text-3xl">{"<"}</span>
+                <GiInfinity className="inline text-3xl font-bold text-[var(--span-color)]" />
+                <span className="text-[var(--text-color)] text-3xl">{"/>"}</span> Stedan.
+              </p>
+            </Link> */}
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex gap-6">

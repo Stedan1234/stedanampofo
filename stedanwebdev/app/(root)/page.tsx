@@ -3,6 +3,7 @@ import { HomeHero } from "../components/homeHero";
 import TechExpertise from "../components/techExpertise";
 import HomeServices from "../components/homeServices";
 import FeaturedProjects from "../components/featuredProjects";
+import HomeContact from "../components/homeContact";
 export default function Home() {
   return (
     <div>
@@ -11,6 +12,7 @@ export default function Home() {
         <TechExpertise />
         <HomeServices />
         <FeaturedProjects />
+        <HomeContact />
         </div>
     </div>  
   );

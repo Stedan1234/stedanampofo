@@ -1,103 +1,130 @@
-import React from "react";
-import { RiNextjsFill } from "react-icons/ri";
+import React, { JSX } from "react";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
 import { GrMysql } from "react-icons/gr";
-import { FaFigma, FaGitAlt, FaHtml5 } from "react-icons/fa6";
+import {
+  FaFigma,
+  FaGitAlt,
+  FaHtml5,
+  FaJs,
+  FaReact,
+  FaGithub,
+  FaCode,
+  FaDatabase,
+} from "react-icons/fa6";
+import { FaTools, FaPencilRuler } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
-import { SiMongodb,  SiPostman, SiPrisma } from "react-icons/si";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { FaCode, FaDatabase, FaTools, FaJs, FaReact, FaGithub } from "react-icons/fa";
-import { motion } from "motion/react";
+import { SiMongodb, SiPostman, SiPrisma } from "react-icons/si";
+import { motion } from "framer-motion";
 
+// Define a union type for valid categories
+type CategoryKey =
+  | "Frontend"
+  | "DatabaseManagement"
+  | "UI/UX"
+  | "Methodologies";
 
 const TechExpertise = () => {
   const stacks = [
     {
       id: 1,
       name: "Next.js",
-      cat: "Frontend",
+      cat: "Frontend" as CategoryKey, // Explicitly type `cat` as `CategoryKey`
       icon: <RiNextjsFill />,
     },
     {
       id: 2,
       name: "React",
-      cat: "Frontend",
+      cat: "Frontend" as CategoryKey,
       icon: <FaReact />,
     },
     {
       id: 3,
       name: "TypeScript",
-      cat: "Frontend",
+      cat: "Frontend" as CategoryKey,
       icon: <BiLogoTypescript />,
     },
     {
       id: 4,
       name: "JavaScript",
-      cat: "Frontend",
+      cat: "Frontend" as CategoryKey,
       icon: <FaJs />,
     },
     {
       id: 5,
       name: "MySQL",
-      cat: "DatabaseManagement",
+      cat: "DatabaseManagement" as CategoryKey,
       icon: <GrMysql />,
     },
     {
       id: 6,
       name: "Prisma",
-      cat: "DatabaseManagement",
+      cat: "DatabaseManagement" as CategoryKey,
       icon: <SiPrisma />,
     },
     {
       id: 7,
       name: "Git",
-      cat: "Methodologies",
+      cat: "Methodologies" as CategoryKey,
       icon: <FaGitAlt />,
     },
     {
       id: 8,
       name: "GitHub",
-      cat: "Methodologies",
+      cat: "Methodologies" as CategoryKey,
       icon: <FaGithub />,
     },
     {
       id: 9,
       name: "Postman",
-      cat: "Methodologies",
+      cat: "Methodologies" as CategoryKey,
       icon: <SiPostman />,
     },
     {
       id: 10,
       name: "Visual Studio Code",
-      cat: "Methodologies",
+      cat: "Methodologies" as CategoryKey,
       icon: <VscVscode />,
     },
     {
       id: 11,
       name: "MongoDB",
-      cat: "DatabaseManagement",
+      cat: "DatabaseManagement" as CategoryKey,
       icon: <SiMongodb />,
     },
     {
       id: 12,
       name: "Tailwind CSS",
-      cat: "Frontend",
+      cat: "Frontend" as CategoryKey,
       icon: <RiTailwindCssFill />,
     },
     {
       id: 13,
       name: "HTML/CSS",
-      cat: "Frontend",
+      cat: "Frontend" as CategoryKey,
       icon: <FaHtml5 />,
     },
     {
-      id: 13,
+      id: 14,
       name: "Figma",
-      cat: "UI/UX",
+      cat: "UI/UX" as CategoryKey,
       icon: <FaFigma />,
     },
-
   ];
+
+  const categoryIcons: Record<CategoryKey, JSX.Element> = {
+    Frontend: <FaCode />,
+    DatabaseManagement: <FaDatabase />,
+    "UI/UX": <FaPencilRuler />,
+    Methodologies: <FaTools />,
+  };
+
+  const categoryLabels: Record<CategoryKey, string> = {
+    Frontend: "Frontend Development",
+    DatabaseManagement: "Database Management",
+    "UI/UX": "UI/UX Design",
+    Methodologies: "Tools & Methodologies",
+  };
 
   return (
     <motion.div
@@ -106,50 +133,40 @@ const TechExpertise = () => {
       transition={{ duration: 0.5, ease: [0.4, 0.0, 0.2, 1] }}
       className="w-full py-6"
     >
-    <section className="w-full py-6">
-      <div className="inline-block my-6">
-        <h2 className="text-2xl font-bold">Technical Expertise</h2>
-        <hr className="w-full border-t-2 border-[var(--span-color)] mt-1" />
-      </div>
-      <div className="flex flex-col space-y-8">
-        {["Frontend", "DatabaseManagement", "Methodologies"].map((category) => (
-          <div key={category} className="space-y-4">
-            <h2 className="text-xl font-medium flex items-center gap-2">
-              {category === "Frontend" ? (
-                <>
-                  <FaCode /> Frontend Development
-                </>
-              ) : category === "DatabaseManagement" ? (
-                <>
-                  <FaDatabase /> Database Management
-                </>
-              ) : category === "UI/UX" ? (
-                <>
-                  <FaFigma /> UI/UX Design
-                </>
-              ) : (
-                <>
-                  <FaTools /> Tools & Methodologies
-                </>
-              )}
-            </h2>
-            <div className="flex flex-wrap gap-4">
-              {stacks
-                .filter((stack) => stack.cat === category)
-                .map((stack) => (
-                  <div
-                    key={stack.id}
-                    className="flex items-center gap-2 badge py-5 px-8 rounded-md bg-gray-100 drop-shadow-lg text-gray-800 border-none"
-                  >
-                    {stack.icon}
-                    {stack.name}
-                  </div>
-                ))}
+      <section className="w-full py-6">
+        <div className="inline-block my-6">
+          <h2 className="text-2xl font-bold text-[var(--text-color)]">Technical Expertise</h2>
+          <hr className="w-full border-t-2 border-[var(--span-color)] mt-1" />
+        </div>
+        <div className="flex flex-col space-y-8">
+          {(
+            ["Frontend", "DatabaseManagement", "Methodologies", "UI/UX"] as CategoryKey[]
+          ).map((category) => (
+            <div key={category} className="space-y-4">
+              <h2 className="text-xl font-medium flex items-center gap-2">
+                {categoryIcons[category]} {categoryLabels[category]}
+              </h2>
+              <div className="flex flex-wrap gap-4">
+                {stacks
+                  .filter((stack) => stack.cat === category)
+                  .map((stack) => (
+                    <motion.div
+                      key={stack.id}
+                      className="flex items-center gap-2 badge py-3 px-6 sm:py-4 sm:px-8 rounded-md bg-gray-100 drop-shadow-lg text-gray-800 border-none"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {React.cloneElement(stack.icon, {
+                        "aria-label": stack.name,
+                      })}
+                      {stack.name}
+                    </motion.div>
+                  ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
     </motion.div>
   );
 };
