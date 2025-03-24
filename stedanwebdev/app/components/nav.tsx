@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
-// import Image from "next/image";
-// import Logo1 from "../../public/logoLg.png";
-import { GiInfinity } from "react-icons/gi";
+import Image from "next/image";
+import Logo1 from "../../public/logoLg.png";
+// import { GiInfinity } from "react-icons/gi";
 import { CgMenu } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
 import classnames from "classnames";
@@ -72,7 +72,7 @@ const Nav = () => {
         >
           <div className="container mx-auto px-6 py-4 flex justify-between items-center">
             {/* Logo */}
-            {/* <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <Image
                 src={Logo1}
                 alt="Logo"
@@ -80,14 +80,14 @@ const Nav = () => {
                 height={90}
                 className="lg:block object-contain"
               />
-            </Link> */}
-            <Link href="/" className="flex items-center">
+            </Link>
+            {/* <Link href="/" className="flex items-center">
               <p className="text-3xl font-bold text-[var(--text-color)]">
                 <span className="text-[var(--text-color)] text-3xl">{"<"}</span>
                 <GiInfinity className="inline text-3xl font-bold text-[var(--span-color)]" />
                 <span className="text-[var(--text-color)] text-3xl">{"/>"}</span> Stedan.
               </p>
-            </Link>
+            </Link> */}
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex gap-6">
