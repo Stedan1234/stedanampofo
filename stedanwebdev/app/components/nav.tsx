@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Logo1 from "../../public/logoLg.png";
-import { GiInfinity } from "react-icons/gi";
+// import { GiInfinity } from "react-icons/gi";
 import { CgMenu } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
 import classnames from "classnames";
