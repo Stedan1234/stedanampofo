@@ -8,13 +8,13 @@ export default function Home() {
   return (
     <div>
       <HomeHero />
-        <div className="px-[var(--page-padding-sm)] lg:px-[var(--page-padding-lg)]">
+      <div className=" px-[var(--page-padding-sm)] lg:px-[var(--page-padding-lg)]">
         <TechExpertise />
         <HomeServices />
         <FeaturedProjects />
         <HomeContact />
-        </div>
-    </div>  
+      </div>
+    </div>
   );
 }
   

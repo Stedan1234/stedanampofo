@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo2 from "../../public/logoFooter.png";
+import Logo2 from "../../public/StedanLogoFooter.png";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 const Footer = () => {
