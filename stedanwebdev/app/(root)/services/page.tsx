@@ -4,13 +4,14 @@ import { Timeline } from "../../components/timeline";
 import { WorkWithMe } from "@/app/components/workWithMe";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
-
+import Breadcrumbs from "@/app/components/ui/breadCrumbs";
 
 const Page = () => {
   return (
     <main className="flex-grow">
       <div className="px-[var(--page-padding-sm)] lg:px-[var(--page-padding-lg)] pt-20">
-        <div className="container mx-auto px-4">
+        <Breadcrumbs />
+        <div className="container mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[var(--text-color)]">
             Services
           </h1>

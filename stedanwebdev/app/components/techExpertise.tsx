@@ -1,3 +1,4 @@
+"use client";
 import React, { JSX } from "react";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";

@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-
+import { motion } from "framer-motion";
 export function WorkWithMe() {
   const benefits = [
     "Custom-built solutions tailored to your unique needs.",
@@ -18,12 +19,12 @@ export function WorkWithMe() {
             <h2 className="text-2xl font-bold">Why Work With Me</h2>
             <hr className="w-full border-t-2 border-[var(--span-color)] mt-1" />
           </div>
-          <p className="text-center text-[var(--text-color)] mb-8 font-semibold">
+          <motion.p className="text-center text-[var(--text-color)] mb-8 font-semibold">
             Precision, Creativity, and Timeliness – The foundation of every
             project I build.
-          </p>
+          </motion.p>
         </div>
-        <div className="max-w-3xl mx-auto">
+        <motion.div className="max-w-3xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start">
@@ -44,7 +45,7 @@ export function WorkWithMe() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

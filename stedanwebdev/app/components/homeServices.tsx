@@ -1,3 +1,4 @@
+"use client";
 import { FaArrowRightLong } from "react-icons/fa6";
 import ServicesGrid from "../components/ui/ServicesGrid";
 import { motion } from "framer-motion";

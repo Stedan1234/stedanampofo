@@ -6,7 +6,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import Link from "next/link";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
-
+import { motion } from "framer-motion";
 export function ContactForm() {
   const [state, handleSubmit] = useForm("myzejzew");
   const [isSuccess, setIsSuccess] = useState(false);
@@ -41,10 +41,10 @@ export function ContactForm() {
       Message has been sent successfully! Refreshing...
     </p>
   ) : (
-    <section className="flex flex-col min-h-screen gap-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <section className="grid grid-cols-1 lg:grid-cols-2 min-h-screen gap-10">
+      <div className="flex flex-col gap-6">
         {/* Contact Information */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-8">
           <h2 className="text-2xl font-medium text-[var(--text-color)]">
             Contact Information
           </h2>
@@ -79,14 +79,12 @@ export function ContactForm() {
             </p>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col gap-4">
-                                      <h2 className="text-xl font-medium text-[var(--text-color)]">
+        <div className="flex flex-col gap-4">
+          <h2 className="text-xl font-medium text-[var(--text-color)]">
             Connect with me
           </h2>
 
-                  <div className="flex justify-start space-x-4 pb-4">
-
+          <div className="flex justify-start space-x-4 pb-4">
             {socials.map((link) => (
               <a
                 key={link.id}
@@ -99,10 +97,9 @@ export function ContactForm() {
               </a>
             ))}
           </div>
-                </div>
-
-
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        </div>
+      </div>
+      <motion.form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <h2 className="text-2xl font-medium">Send Me a Message</h2>
 
         <label htmlFor="name" className="font-medium">
@@ -147,11 +144,11 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={state.submitting}
-          className="flex items-center justify-center gap-1 px-4 py-2 text-[var(--text-color)] hover:text-[var(--span-color)] rounded-md hover:bg-text transition-all duration-300"
+          className="flex items-center justify-center gap-1 px-4 py-2 text-[var(--text-color)] hover:text-[var(--span-color)] rounded-md hover:bg-text transition-all duration-300 cursor-pointer"
         >
           Send Message <FaTelegramPlane />
         </button>
-      </form>
+      </motion.form>
     </section>
   );
 }

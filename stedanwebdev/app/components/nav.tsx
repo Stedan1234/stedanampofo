@@ -40,7 +40,8 @@ const Nav = () => {
     { id: 1, name: "Home", link: "/" },
     { id: 2, name: "Services", link: "/services" },
     { id: 3, name: "Projects", link: "/projects" },
-    { id: 4, name: "Contact", link: "/contact" },
+    { id: 4, name: "Blogs", link: "https://medium.com/@stedanampofo19", target:"_blank" },
+    { id: 5, name: "Contact", link: "/contact" },
   ];
 
     const socials = [
@@ -76,8 +77,8 @@ const Nav = () => {
               <Image
                 src={Logo1}
                 alt="Logo"
-                width={200}
-                height={90}
+                width={160}
+                height={60}
                 className="lg:block object-contain"
               />
             </Link>
@@ -89,6 +90,7 @@ const Nav = () => {
                   <li key={link.id}>
                     <Link
                       href={link.link}
+                      target={link.target}
                       className={classnames(
                         "text-lg font-normal transition-all duration-300",
                         link.link === pathname
@@ -133,7 +135,7 @@ const Nav = () => {
         <div
           ref={mobileMenuRef}
           className={classnames(
-            "fixed top-[60px] left-0 w-full bg-[var(--background-color)] shadow-md transition-all duration-300 z-40 overflow-hidden",
+            "fixed top-[60px] left-0 w-full bg-[var(--background-color)] shadow-md transition-all duration-300 z-40 overflow-hidden px-4",
             {
               "max-h-0 opacity-0": !mobileDrawerOpen,
               "max-h-screen opacity-100": mobileDrawerOpen,
@@ -158,7 +160,7 @@ const Nav = () => {
               </li>
             ))}
           </ul>
-
+          <hr className="my-4 border-gray-300" />
           {/* Social Icons - Shown in Mobile */}
           <div className="flex justify-start px-6 space-x-4 pb-4">
             {socials.map((link) => (
