@@ -1,4 +1,3 @@
-"use client";
 import { HomeHero } from "../components/homeHero";
 import TechExpertise from "../components/techExpertise";
 import HomeServices from "../components/homeServices";
