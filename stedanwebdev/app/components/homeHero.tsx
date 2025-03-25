@@ -39,10 +39,9 @@ export function HomeHero() {
             Get in Touch <FaArrowRightLong />
           </Link>
           <Link
-            href="/cv.pdf"
+            href="/StedanAmpofoResume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            download
             className="flex items-center gap-1 text-sm md:text-base lg:text-lg font-medium text-text dark:text-[var(--text-color)] text-center px-4 py-2 hover:bg-text hover:text-[var(--span-color)] transition-all duration-300"
           >
             View Resume <RxExternalLink />
