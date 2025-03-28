@@ -105,7 +105,7 @@ export function AllProjects() {
             <div className="flex flex-wrap gap-2">
               {project.stacks.map((stack) => (
                 <div
-                  className="flex items-center gap-2 badge py-2 px-4 rounded-md bg-[var(--background-color)] drop-shadow-lg text-[var(--text-color)] border-none" // Adjusted padding for smaller screens
+                  className="flex items-center gap-2 badge py-2 px-4 rounded-md bg-[var(--background-color)] shadow-sm drop-shadow-lg  text-[var(--text-color)] border-none" 
                   key={stack}
                 >
                   {stack}
