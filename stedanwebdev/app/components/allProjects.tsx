@@ -37,9 +37,9 @@ const projects: Project[] = [
     codeIcon: <FaGithub />,
     previewText: "Preview",
     codeText: "Source Code",
-    status: "Completed",
+    status: "In Progress",
     type: "Team Project",
-    progress: "100%",
+    progress: "70%",
   },
   {
     id: 2,
@@ -55,9 +55,9 @@ const projects: Project[] = [
     codeIcon: <FaFigma />,
     previewText: "Preview",
     codeText: "Source",
-    status: "In Progress",
+    status: "Completed",
     type: "Personal Project",
-    progress: "25%",
+    progress: "100%",
   },
 ];
 
@@ -105,7 +105,7 @@ export function AllProjects() {
             <div className="flex flex-wrap gap-2">
               {project.stacks.map((stack) => (
                 <div
-                  className="flex items-center gap-2 badge py-2 px-4 rounded-md bg-[var(--background-color)] shadow-sm drop-shadow-lg  text-[var(--text-color)] border-none" 
+                  className="flex items-center gap-2 badge py-2 px-4 rounded-md bg-[var(--background-color)] shadow-sm drop-shadow-lg  text-[var(--text-color)] border-none"
                   key={stack}
                 >
                   {stack}
@@ -180,7 +180,7 @@ export function CurrentProjects() {
               <div className="flex flex-wrap gap-2">
                 {project.stacks.map((stack) => (
                   <div
-                    className="flex items-center gap-2 badge py-2 px-4 rounded-md bg-[var(--background-color)] drop-shadow-lg text-[var(--text-color)] border-none"
+                  className="flex items-center gap-2 badge py-2 px-4 rounded-md bg-[var(--background-color)] shadow-sm drop-shadow-lg  text-[var(--text-color)] border-none"
                     key={stack}
                   >
                     {stack}
