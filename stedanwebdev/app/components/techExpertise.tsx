@@ -153,9 +153,7 @@ const TechExpertise = () => {
                   .map((stack) => (
                     <motion.div
                       key={stack.id}
-                      className="flex items-center gap-2 badge py-3 px-6 sm:py-4 sm:px-8 rounded-md bg-gray-100 drop-shadow-lg text-gray-800 border-none"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center gap-2 badge py-3 px-6 sm:py-4 sm:px-8 rounded-md bg-gray-100 drop-shadow text-[var(--text-color)] border-none"
                     >
                       {React.cloneElement(stack.icon, {
                         "aria-label": stack.name,
