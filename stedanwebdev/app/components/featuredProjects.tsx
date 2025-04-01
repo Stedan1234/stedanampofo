@@ -20,7 +20,7 @@ const FeaturedProjects: React.FC = () => {
             View All <FaArrowRightLong />
           </Link>
         </div>
-        <AllProjects />
+        <AllProjects limit={2} /> {/* Show only first two projects */}
       </motion.div>
     </section>
   );

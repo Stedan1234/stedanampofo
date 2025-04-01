@@ -26,6 +26,42 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: "E-commerce Platform For Tech Products",
+    description:
+      "Cepta IT is an e-commerce platform specializing in tech products, offering a wide range of phones, computers, accessories, and more.",
+    imageUrl: "/cepta-it.png",
+    stacks: ["React", "Javascript", "Tailwind CSS"],
+    previewLink: "https://cepta-it.vercel.app/",
+    sourceCode: "",
+    previewIcon: <RxExternalLink />,
+    codeIcon: <FaGithub />,
+    previewText: "Preview",
+    codeText: "Source Code",
+    status: "In Progress",
+    type: "Team Project",
+    progress: "60%",
+  },
+  {
+    id: 2,
+    title: "StedFit Fitness App Ui/Ux Design",
+    description:
+      "StedFit is a fitness app that helps users track their progress and stay motivated.",
+    imageUrl: "/StedFitMockup.png",
+    stacks: ["Figma"],
+    sourceCode:
+      "https://www.figma.com/design/YJnbgrLTsfJ0vIj4ZPRf3Z/StedFit?node-id=47-332&t=5QqGAKz5NmOFjlai-1",
+    previewLink:
+      "https://www.figma.com/proto/YJnbgrLTsfJ0vIj4ZPRf3Z/StedFit?node-id=0-1&t=gKM3H0ZH1SDUthMc-1",
+    previewIcon: <RxExternalLink />,
+    codeIcon: <FaFigma />,
+    previewText: "Preview",
+    codeText: "Source",
+    status: "Completed",
+    type: "Personal Project",
+    progress: "100%",
+  },
+  {
+    id: 3,
     title: "E-commerce Platform for Malawi Village Tea and Juice Online Shop",
     description:
       "Malawi Village is an e-commerce platform dedicated to selling high-quality, locally sourced tea and fresh juices.",
@@ -41,30 +77,15 @@ const projects: Project[] = [
     type: "Team Project",
     progress: "70%",
   },
-  {
-    id: 2,
-    title: "StedFit Fitness App Ui/Ux Design",
-    description:
-      "StedFit is a fitness app that helps users track their progress and stay motivated.",
-    imageUrl: "/StedFitMockup.png",
-    stacks: ["Figma"],
-    sourceCode: "",
-    previewLink:
-      "https://www.figma.com/proto/YJnbgrLTsfJ0vIj4ZPRf3Z/StedFit?node-id=0-1&t=gKM3H0ZH1SDUthMc-1",
-    previewIcon: <RxExternalLink />,
-    codeIcon: <FaFigma />,
-    previewText: "Preview",
-    codeText: "Source",
-    status: "Completed",
-    type: "Personal Project",
-    progress: "100%",
-  },
 ];
 
-export function AllProjects() {
+export function AllProjects({ limit }: { limit?: number }) {
+  // Show only limited projects if 'limit' is provided; otherwise, show all
+  const displayedProjects = limit ? projects.slice(0, limit) : projects;
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-4">
-      {projects.map((project) => (
+      {displayedProjects.map((project) => (
         <motion.div
           key={project.id}
           className="card bg-[var(--background-color)] w-full shadow-sm drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
@@ -84,8 +105,6 @@ export function AllProjects() {
             />
           </figure>
           <div className="card-body bg-[var(--background-color)] gap-4 p-4">
-            {" "}
-            {/* Added padding for better spacing */}
             <h2 className="card-title">{project.title}</h2>
             <div className="flex gap-2">
               <div
@@ -180,7 +199,7 @@ export function CurrentProjects() {
               <div className="flex flex-wrap gap-2">
                 {project.stacks.map((stack) => (
                   <div
-                  className="flex items-center gap-2 badge py-2 px-4 rounded-md bg-[var(--background-color)] shadow-sm drop-shadow-lg  text-[var(--text-color)] border-none"
+                    className="flex items-center gap-2 badge py-2 px-4 rounded-md bg-[var(--background-color)] shadow-sm drop-shadow-lg  text-[var(--text-color)] border-none"
                     key={stack}
                   >
                     {stack}
