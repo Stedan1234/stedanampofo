@@ -111,7 +111,7 @@ export function AllProjects({ limit }: { limit?: number }) {
                 className={`badge border-none ${
                   project.status === "In Progress"
                     ? "bg-none text-[var(--background-color)]"
-                    : "bg-green-500 text-[var(--text-color)]"
+                    : "bg-green-500 text-[var(--background-color)]"
                 }`}
               >
                 {project.status}

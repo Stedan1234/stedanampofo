@@ -16,7 +16,7 @@ export function HomeHero() {
         className="text-2xl px-4 md:text-4xl lg:text-7xl font-bold text-text dark:text-[var(--text-color)] max-w-4xl leading-relaxed lg:leading-snug sm:text-left md:text-center sm:mx-0 md:mx-auto"
       >
         <p className="text-2xl lg:px-4 md:text-3xl lg:text-5xl font-bold text-text dark:text-[var(--text-color)] max-w-4xl leading-relaxed lg:leading-snug sm:text-left md:text-center sm:mx-0 md:mx-auto">
-          Stedan.
+          Stedan Ampofo
         </p>
         <p className="text-2xl lg:px-4 md:text-3xl lg:text-4xl font-medium text-text dark:text-[var(--text-color)] max-w-4xl leading-relaxed lg:leading-snug sm:text-left md:text-center sm:mx-0 md:mx-auto">
           Software Engineer | Developer | UI/UX Designer

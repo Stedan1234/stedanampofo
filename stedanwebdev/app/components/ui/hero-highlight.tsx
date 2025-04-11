@@ -18,12 +18,12 @@ export const HeroHighlight = ({
   // SVG patterns for different states and themes
 const dotPatterns = {
   light: {
-    default: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='12' height='12' fill='none'%3E%3Ccircle fill='%23f1f1f1' cx='10' cy='10' r='2' filter='blur(0.5px)' opacity='0.7' /%3E%3C/svg%3E")`,
-    hover: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='12' height='12' fill='none'%3E%3Ccircle fill='%2393d5f4' cx='10' cy='10' r='2' filter='blur(0.5px)' opacity='0.8' /%3E%3C/svg%3E")`,
+    default: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='12' height='12' fill='none'%3E%3Ccircle fill='%238a2be2' cx='10' cy='10' r='2' filter='blur(0.5px)' opacity='0.7' /%3E%3C/svg%3E")`,
+    hover: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='12' height='12' fill='none'%3E%3Ccircle fill='%239c47f4' cx='10' cy='10' r='2' filter='blur(0.5px)' opacity='0.8' /%3E%3C/svg%3E")`,
   },
   dark: {
-    default: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='12' height='12' fill='none'%3E%3Ccircle fill='%234f4f4f' cx='10' cy='10' r='2' filter='blur(0.5px)' opacity='0.5' /%3E%3C/svg%3E")`,
-    hover: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='12' height='12' fill='none'%3E%3Ccircle fill='%23636363' cx='10' cy='10' r='2' filter='blur(0.5px)' opacity='0.6' /%3E%3C/svg%3E")`,
+    default: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='12' height='12' fill='none'%3E%3Ccircle fill='%238a2be2' cx='10' cy='10' r='2' filter='blur(0.5px)' opacity='0.5' /%3E%3C/svg%3E")`,
+    hover: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='12' height='12' fill='none'%3E%3Ccircle fill='%239c47f4' cx='10' cy='10' r='2' filter='blur(0.5px)' opacity='0.6' /%3E%3C/svg%3E")`,
   },
 };
   function handleMouseMove({

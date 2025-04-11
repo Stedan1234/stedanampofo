@@ -136,12 +136,19 @@ const TechExpertise = () => {
     >
       <section className="w-full py-6">
         <div className="inline-block my-6">
-          <h2 className="text-2xl font-bold text-[var(--text-color)]">Technical Expertise</h2>
+          <h2 className="text-2xl font-bold text-[var(--text-color)]">
+            Technical Expertise
+          </h2>
           <hr className="w-full border-t-2 border-[var(--span-color)] mt-1" />
         </div>
         <div className="flex flex-col space-y-8">
           {(
-            ["Frontend", "DatabaseManagement", "Methodologies", "UI/UX"] as CategoryKey[]
+            [
+              "Frontend",
+              "DatabaseManagement",
+              "Methodologies",
+              "UI/UX",
+            ] as CategoryKey[]
           ).map((category) => (
             <div key={category} className="space-y-4">
               <h2 className="text-xl font-medium flex items-center gap-2">
@@ -153,12 +160,16 @@ const TechExpertise = () => {
                   .map((stack) => (
                     <motion.div
                       key={stack.id}
-                      className="flex items-center gap-2 badge py-3 px-6 sm:py-4 sm:px-8 rounded-md bg-gray-100 drop-shadow text-[var(--text-color)] border-none"
+                      className="flex items-center gap-3 py-3 px-4 sm:py-4 sm:px-6 rounded-md text-[var(--text-color)]"
                     >
-                      {React.cloneElement(stack.icon, {
-                        "aria-label": stack.name,
-                      })}
-                      {stack.name}
+                      <div className="w-10 h-10 flex items-center justify-center text-[var(--background-color)] rounded-full bg-[var(--text-color)] shadow-md text-xl">
+                        {React.cloneElement(stack.icon, {
+                          "aria-label": stack.name,
+                        })}
+                      </div>
+                      <span className="text-sm sm:text-base font-medium">
+                        {stack.name}
+                      </span>
                     </motion.div>
                   ))}
               </div>

@@ -1,21 +1,29 @@
+@font-face {
+  font-family: 'Genty-Sans-Regular';
+  src: url('/fonts/Genty-Sans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "tailwindcss";
 @plugin "daisyui";
-
 
 :root {
   --primary-color: none;
   --secondary-color: none;
   --span-color: #8a2be2;
-  --background-color: #f5f5f5;
-  --text-color: #2e2e2e;
+  --background-color: #f5f5f5 ;
+  --text-color:#4b5563;
   --footer-text-color: #A3A3A3;
   --page-padding-sm: 20px;
   --page-padding-lg: 80px;
+  --font-genty: 'Genty-Sans-Regular', cursive;
 }
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+  font-family: var(--font-genty);
 }
 
 .button {
