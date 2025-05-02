@@ -79,7 +79,7 @@ const ServicesGrid = () => {
     src={service.image}
     alt={service.title}
     fill
-    className="object-cover opacity-35 rounded-lg"
+    className="object-cover opacity-35 rounded-lg bg-blend-lighten"
     priority={service.id === 1}
   />
   <div className="absolute inset-0 bg-black/20 rounded-lg" />

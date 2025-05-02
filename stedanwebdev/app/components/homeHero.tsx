@@ -21,7 +21,7 @@ export function HomeHero() {
         <p className="text-2xl lg:px-4 md:text-3xl lg:text-4xl font-medium text-text dark:text-[var(--text-color)] max-w-4xl leading-relaxed lg:leading-snug sm:text-left md:text-center sm:mx-0 md:mx-auto">
           Software Engineer | Developer | UI/UX Designer
         </p>
-        <p className="text-[16px] md:text-base lg:text-lg  text-text dark:text-[var(--text-color)] font-normal max-w-4xl leading-relaxed lg:leading-snug sm:text-left md:text-center sm:mx-0 md:mx-auto my-2">
+        <p className="text-[16px] md:text-base lg:text-lg  text-text dark:text-[var(--text-color)] font-light max-w-4xl leading-relaxed lg:leading-snug sm:text-left md:text-center sm:mx-0 md:mx-auto my-2">
           I craft visually stunning and highly functional websites and apps that
           don’t just look great but deliver real impact. With precision in
           execution, a creative touch, and a commitment to timely delivery, I
