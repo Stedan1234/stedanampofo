@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react"
 import "../globals.css";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
@@ -24,6 +25,7 @@ export default function RootLayout({
       >
         <Nav />
         {children}
+        <Analytics />
         <Footer />
         <ScrollToTop />
       </body>
