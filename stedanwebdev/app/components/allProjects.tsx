@@ -25,13 +25,13 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: 1,
-    title: "E-commerce Platform For Tech Products",
+    id: 4,
+    title: "E-learning Platform for University Students",
     description:
-      "Cepta IT is an e-commerce platform specializing in tech products, offering a wide range of phones, computers, accessories, and more.",
-    imageUrl: "/cepta-it.png",
-    stacks: ["React", "Javascript", "Tailwind CSS"],
-    previewLink: "https://cepta-it.vercel.app/",
+      "Uni E-learning is a platform designed to facilitate online learning for university students, providing access to course materials, assignments, and resources.",
+    imageUrl: "/eLearningMockup.png",
+    stacks: ["Next Js", "Javascript", "Tailwind CSS", "Daisy UI", "MYSQL"],
+    previewLink: "https://uni-e-learning-app.vercel.app/",
     sourceCode: "",
     previewIcon: <RxExternalLink />,
     codeIcon: <FaGithub />,
@@ -62,6 +62,23 @@ const projects: Project[] = [
   },
   {
     id: 3,
+    title: "E-commerce Platform For Tech Products",
+    description:
+      "Cepta IT is an e-commerce platform specializing in tech products, offering a wide range of phones, computers, accessories, and more.",
+    imageUrl: "/cepta-it.png",
+    stacks: ["React", "Javascript", "Tailwind CSS"],
+    previewLink: "https://cepta-it.vercel.app/",
+    sourceCode: "",
+    previewIcon: <RxExternalLink />,
+    codeIcon: <FaGithub />,
+    previewText: "Preview",
+    codeText: "Source Code",
+    status: "In Progress",
+    type: "Team Project",
+    progress: "60%",
+  },
+  {
+    id: 4,
     title: "E-commerce Platform for Malawi Village Tea and Juice Online Shop",
     description:
       "Malawi Village is an e-commerce platform dedicated to selling high-quality, locally sourced tea and fresh juices.",
@@ -77,27 +94,9 @@ const projects: Project[] = [
     type: "Team Project",
     progress: "70%",
   },
-  {
-    id: 4,
-    title: "E-learning Platform for University Students",
-    description:
-      "Uni E-learning is a platform designed to facilitate online learning for university students, providing access to course materials, assignments, and resources.",
-    imageUrl: "/eLearningMockup.png",
-    stacks: ["Next Js", "Javascript", "Tailwind CSS", "Daisy UI", "MYSQL"],
-    previewLink: "https://uni-e-learning-app.vercel.app/",
-    sourceCode: "",
-    previewIcon: <RxExternalLink />,
-    codeIcon: <FaGithub />,
-    previewText: "Preview",
-    codeText: "Source Code",
-    status: "In Progress",
-    type: "Team Project",
-    progress: "60%",
-  },
 ];
 
 export function AllProjects({ limit }: { limit?: number }) {
-  // Show only limited projects if 'limit' is provided; otherwise, show all
   const displayedProjects = limit ? projects.slice(0, limit) : projects;
 
   return (
