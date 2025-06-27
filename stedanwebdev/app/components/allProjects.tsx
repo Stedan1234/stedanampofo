@@ -77,6 +77,23 @@ const projects: Project[] = [
     type: "Team Project",
     progress: "70%",
   },
+  {
+    id: 4,
+    title: "E-learning Platform for University Students",
+    description:
+      "Uni E-learning is a platform designed to facilitate online learning for university students, providing access to course materials, assignments, and resources.",
+    imageUrl: "/eLearningMockup.png",
+    stacks: ["Next Js", "Javascript", "Tailwind CSS", "Daisy UI", "MYSQL"],
+    previewLink: "https://uni-e-learning-app.vercel.app/",
+    sourceCode: "",
+    previewIcon: <RxExternalLink />,
+    codeIcon: <FaGithub />,
+    previewText: "Preview",
+    codeText: "Source Code",
+    status: "In Progress",
+    type: "Team Project",
+    progress: "60%",
+  },
 ];
 
 export function AllProjects({ limit }: { limit?: number }) {
