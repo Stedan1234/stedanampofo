@@ -25,7 +25,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: 4,
+    id: 1,
     title: "E-learning Platform for University Students",
     description:
       "Uni E-learning is a platform designed to facilitate online learning for university students, providing access to course materials, assignments, and resources.",
@@ -37,9 +37,9 @@ const projects: Project[] = [
     codeIcon: <FaGithub />,
     previewText: "Preview",
     codeText: "Source Code",
-    status: "In Progress",
+    status: "Completed",
     type: "Team Project",
-    progress: "60%",
+    progress: "100%",
   },
   {
     id: 2,
