@@ -94,6 +94,23 @@ const projects: Project[] = [
     type: "Team Project",
     progress: "70%",
   },
+    {
+    id: 4,
+    title: "DreamWise (Dream Solomon)",
+    description:
+      "A dream interpretation app that provides insights and meanings behind users' dreams, helping them understand their subconscious thoughts and emotions.",
+    imageUrl: "/dreamwise-owl-illustration.jpg",
+    stacks: ["Javascript", "CSS", "OpenAI", "Express", "PostgreSQL"],
+    previewLink: "https://dream-solomon.onrender.com/",
+    sourceCode: "",
+    previewIcon: <RxExternalLink />,
+    codeIcon: <FaGithub />,
+    previewText: "Preview",
+    codeText: "Source Code",
+    status: "In Progress",
+    type: "Personal Project",
+    progress: "100%",
+  },
 ];
 
 export function AllProjects({ limit }: { limit?: number }) {
