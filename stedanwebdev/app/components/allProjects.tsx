@@ -41,21 +41,19 @@ const projects: Project[] = [
     type: "Team Project",
     progress: "100%",
   },
-  {
+    {
     id: 2,
-    title: "StedFit Fitness App Ui/Ux Design",
+    title: "DreamWise (Dream Solomon)",
     description:
-      "StedFit is a fitness app that helps users track their progress and stay motivated.",
-    imageUrl: "/StedFitMockup.png",
-    stacks: ["Figma"],
-    sourceCode:
-      "https://www.figma.com/design/YJnbgrLTsfJ0vIj4ZPRf3Z/StedFit?node-id=47-332&t=5QqGAKz5NmOFjlai-1",
-    previewLink:
-      "https://www.figma.com/proto/YJnbgrLTsfJ0vIj4ZPRf3Z/StedFit?node-id=0-1&t=gKM3H0ZH1SDUthMc-1",
+      "A dream interpretation app that provides insights and meanings behind users' dreams, helping them understand their subconscious thoughts and emotions.",
+    imageUrl: "/DreamWise.png",
+    stacks: ["Javascript", "CSS", "OpenAI", "Express", "PostgreSQL"],
+    previewLink: "https://dream-solomon.onrender.com/",
+    sourceCode: "",
     previewIcon: <RxExternalLink />,
-    codeIcon: <FaFigma />,
+    codeIcon: <FaGithub />,
     previewText: "Preview",
-    codeText: "Source",
+    codeText: "Source Code",
     status: "Completed",
     type: "Personal Project",
     progress: "100%",
@@ -94,23 +92,26 @@ const projects: Project[] = [
     type: "Team Project",
     progress: "70%",
   },
-    {
-    id: 4,
-    title: "DreamWise (Dream Solomon)",
+  {
+      id: 4,
+    title: "StedFit Fitness App Ui/Ux Design",
     description:
-      "A dream interpretation app that provides insights and meanings behind users' dreams, helping them understand their subconscious thoughts and emotions.",
-    imageUrl: "/dreamwise-owl-illustration.jpg",
-    stacks: ["Javascript", "CSS", "OpenAI", "Express", "PostgreSQL"],
-    previewLink: "https://dream-solomon.onrender.com/",
-    sourceCode: "",
+      "StedFit is a fitness app that helps users track their progress and stay motivated.",
+    imageUrl: "/StedFitMockup.png",
+    stacks: ["Figma"],
+    sourceCode:
+      "https://www.figma.com/design/YJnbgrLTsfJ0vIj4ZPRf3Z/StedFit?node-id=47-332&t=5QqGAKz5NmOFjlai-1",
+    previewLink:
+      "https://www.figma.com/proto/YJnbgrLTsfJ0vIj4ZPRf3Z/StedFit?node-id=0-1&t=gKM3H0ZH1SDUthMc-1",
     previewIcon: <RxExternalLink />,
-    codeIcon: <FaGithub />,
+    codeIcon: <FaFigma />,
     previewText: "Preview",
-    codeText: "Source Code",
-    status: "In Progress",
+    codeText: "Source",
+    status: "Completed",
     type: "Personal Project",
     progress: "100%",
   },
+
 ];
 
 export function AllProjects({ limit }: { limit?: number }) {
