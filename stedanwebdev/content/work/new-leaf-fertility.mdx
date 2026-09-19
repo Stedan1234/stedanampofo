@@ -1,0 +1,106 @@
+---
+title: "The funnel was skipping the thing I built"
+slug: "new-leaf-fertility"
+summary: "Took a three-page brochure site to a content platform with 20 CMS collections and a clinical approval workflow — then found the paid funnel was routing around all of it."
+date: "2026-09-19"
+nature: "client"
+role: "Website manager, brand and digital assets · New Leaf Fertility · 2024–present"
+year: "2024–26"
+tags: ["Webflow", "Content systems", "Analytics"]
+draft: true
+---
+
+
+## The situation
+
+New Leaf connects intended parents with fertility clinics in Ghana — surrogacy primarily, alongside IVF, egg donation and egg freezing. The market gap is real. Most countries restrict or ban commercial surrogacy. Ghana permits it, at a fraction of UK or US cost.
+
+So the audience is almost entirely international, and the sale is almost entirely trust. Someone in London or Berlin has to believe an organisation 5,000 miles away is legitimate enough to begin a medical process involving a child, before meeting anyone or seeing anything.
+
+When I joined, the website was three pages: home, about, contact. Nothing to read, nothing to verify, nobody to see.
+
+## My role
+
+Website manager and brand/digital assets manager, on a founding team of four alongside the founder, co-founder and operations manager. I owned site architecture, CMS structure, page design, graphics and video.
+
+I did not write the articles. Copy came from the team and, later, from clinical partners.
+
+## Part one — building the library
+
+### Turn a brochure into a content platform
+
+I built out roughly 20 CMS collections so the site could hold depth instead of pitching: articles, treatment guides, quick facts, FAQs, team members, authors, categories, careers. Live today: **7 articles, 3 treatment guides, 16 treatment quick facts, 16 FAQs, 8 team members.**
+
+### Human copy inside a clinical approval gate
+
+Early articles were flat, and nothing had medical sign-off.
+
+Those two problems pull against each other. Conversational copy is what an anxious person actually absorbs. Clinical accuracy is what makes it safe to publish. The usual resolution is to go stiff and defensive, which is why most fertility content reads like a liability waiver.
+
+Once we partnered with a clinic, I set up a workflow where treatment guides go to a doctor for approval before publishing, and kept the tone readable inside that gate. The process still runs now that the team has grown.
+
+### Put faces on the site
+
+A team page, with eight people on it. In a cross-border business where the underlying fear is *is this real*, showing who is actually there does more work than any paragraph of copy.
+
+### Lead with process, hold back price
+
+Treatment guides open with process and facts. There is no pricing anywhere on the site — deliberate, because we don't yet have standard pricing we'd stand behind publicly.
+
+I hold this as an open question rather than a settled decision. Cost is a large part of why an international couple is looking at Ghana at all, and a page with no price signal may be filtering out people who would have qualified.
+
+### Stop building, and use Luma
+
+I set out to build an events template in the CMS. Every event needed a different structure, and no standard shape existed that didn't require fresh CMS setup each time. So I stopped and moved events to Luma.
+
+Building it would have produced a template nobody could maintain. The right call, reached later than it should have been.
+
+## Part two — what the numbers showed
+
+Five and a half months of GA4, April to September 2026:
+
+| | |
+|---|---|
+| Sessions | 7,063 |
+| Active users | 5,392 |
+| Engaged sessions | 1,839 (26%) |
+| Avg. session duration | 1m 28s |
+| Key events configured | **0** |
+| Email captures (Brevo) | **12** — 10 newsletter, 2 guide downloads |
+
+Then the landing pages:
+
+| Landing page | Sessions | Engagement rate |
+|---|---|---|
+| `/book-a-consultation` | **4,893** | **16.19%** |
+| `/` | 1,438 | 47.44% |
+| `/careers` | 268 | 60% |
+| `/about-us` | 113 | 56.62% |
+| `/programs` | 47 | 68.09% |
+
+**69% of all traffic lands directly on the booking page, and that page has the worst engagement rate on the site.** Not one article or treatment guide appears in the top six.
+
+Paid search was routing almost everything straight to the booking form, skipping the library entirely. The pages that engage people — home at 47%, careers at 60%, programs at 68% — were getting a fraction of the traffic.
+
+### And the measurement was confirming it
+
+The primary Google Ads conversion, *Book appointment*, fires on **page load** of the booking page and counts every occurrence. Between 6 February and 19 September 2026 it recorded **3,193 conversions**.
+
+Those are page loads. The action that represents an actual lead — the Tally form submission — recorded **zero**, meaning the tag never fires. GA4 has no key events configured at all.
+
+So the number that looked like performance was measuring the dump, and the number that mattered was never captured. 12 email addresses from 7,063 sessions is the real conversion picture: **0.17%**.
+
+## What I'd change
+
+1. **Fix the tracking first.** Tally form submission as the primary conversion, page-load demoted to secondary, key events configured in GA4. Nothing else can be judged until this is right.
+2. **Re-route paid traffic to the guides, not the form.** Someone researching surrogacy abroad is not ready to book on first click. Send them to the treatment guide matching the ad, then offer the consultation.
+3. **Give the library an entry point.** Seven articles nobody lands on is a distribution problem, not a content problem.
+4. **Test a price signal.** Not a price list — a range, or a comparison. The current zero-signal approach is untested either way.
+
+## What I'd take from it
+
+I spent most of my time here building capability: collections, templates, an approval workflow, a brand. All of that was needed and it holds up.
+
+But the funnel was routing around it, and I didn't find that until I went looking at landing-page engagement rather than totals. The lesson is cheap to state and expensive to learn: building the thing and getting people to it are two separate jobs, and the second one is easier to skip because the first one feels like progress.
+
+---
