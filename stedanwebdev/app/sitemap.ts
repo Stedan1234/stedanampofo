@@ -11,19 +11,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/contact` },
   ];
 
-  if (flags.work) {
+ if (flags.work) {
+  const workDocs = getDocs("work");
+  if (workDocs.length > 0) {
     pages.push({ url: `${base}/work` });
-    getDocs("work").forEach((d) => pages.push({ url: `${base}/work/${d.slug}` }));
+    workDocs.forEach((d) => pages.push({ url: `${base}/work/${d.slug}` }));
   }
+}
   if (flags.services) {
     pages.push({ url: `${base}/services` });
     services.forEach((s) => pages.push({ url: `${base}/services/${s.slug}` }));
   }
   if (flags.blog) {
-    pages.push({ url: `${base}/blog` });
-    getDocs("blog").forEach((d) =>
-      pages.push({ url: `${base}/blog/${d.slug}`, lastModified: d.date || undefined })
-    );
+    const blogDocs = getDocs("blog");
+    if (blogDocs.length > 0) {
+      pages.push({ url: `${base}/blog` });
+      blogDocs.forEach((d) =>
+        pages.push({ url: `${base}/blog/${d.slug}`, lastModified: d.date || undefined })
+      );
+    }
   }
   return pages;
 }
