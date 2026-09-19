@@ -6,7 +6,7 @@
 export const site = {
   name: "Stedan.",
   fullName: "Stedan Ampofo",
-  url: "https://stedan.site",            // <-- change when the domain is live
+  url: "https://www.stedan.site",            // <-- change when the domain is live
   role: "Product designer, full-stack engineer, AI",
   tagline:
     "I help ambitious startups and small businesses build a brand and digital presence that matches what they're actually building.",
