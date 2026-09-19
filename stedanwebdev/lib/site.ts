@@ -13,7 +13,7 @@ export const site = {
   location: "Accra, Ghana",
   email: "stedanampofo19@gmail.com",           // <-- swap for hello@yourdomain when ready
   socials: {
-    linkedin: "https://www.linkedin.com/in/stedan-ampofo",
+    linkedin: "https://www.linkedin.com/in/stedan-ampofo-235820230",
     github: "https://github.com/Stedan1234",
   },
   formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "",
