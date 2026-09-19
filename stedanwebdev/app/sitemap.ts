@@ -31,5 +31,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       );
     }
   }
-  return pages; 
+  return pages;
 }
