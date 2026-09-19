@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.name,
     type: "website",
+    images: [{ url: "/brand/og.png", width: 1200, height: 630 }],
   },
 };
 
