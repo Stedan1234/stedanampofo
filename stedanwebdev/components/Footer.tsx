@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mark } from "./Mark";
 import { flags, site } from "@/lib/site";
+import Image from "next/image";
 
 export function Footer() {
   const links = [
@@ -22,7 +23,14 @@ export function Footer() {
           <p className="max-w-[24em] text-[14.5px] text-ink-soft">{site.role}</p>
           <p className="mt-1 text-[14.5px] text-ink-soft">{site.location}</p>
         </div>
-
+        <a href="https://websitelaunches.com/site/stedan.site" target="_blank" rel="noopener">
+          <Image
+            src="https://websitelaunches.com/badge/stedan.site.svg"
+            alt="Established online - Public launch record"
+            width="255"
+            height="55"
+          />
+        </a>
         <div className="flex gap-12 text-[14.5px]">
           <div className="space-y-2">
             {links.map((l) => (
