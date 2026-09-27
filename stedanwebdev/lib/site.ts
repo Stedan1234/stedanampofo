@@ -22,7 +22,7 @@ export const site = {
 export const flags = {
   work: true,
   services: true,
-  servicePricing: false,   // turn on once you've decided real numbers
+  servicePricing: true,   // turn on once you've decided real numbers
   blog: true,
   concierge: false,        // the AI assistant — first needs pricing
 } as const;
