@@ -2,14 +2,14 @@
 title: "The funnel was skipping the thing I built"
 slug: "new-leaf-fertility"
 summary: "Took a three-page brochure site to a content platform with 20 CMS collections and a clinical approval workflow — then found the paid funnel was routing around all of it."
-date: "2026-09-19"
+date: "2026-09-27"
 nature: "client"
-role: "Website manager, brand and digital assets · New Leaf Fertility · 2024–present"
+role: "Marketing Associate — website, brand and digital assets · New Leaf Fertility · 2024–present"
 year: "2024–26"
 tags: ["Webflow", "Content systems", "Analytics"]
-draft: true
----
-
+cover: "/work/new-leaf/cover.png"
+draft: false
+--- 
 
 ## The situation
 
@@ -21,7 +21,7 @@ When I joined, the website was three pages: home, about, contact. Nothing to rea
 
 ## My role
 
-Website manager and brand/digital assets manager, on a founding team of four alongside the founder, co-founder and operations manager. I owned site architecture, CMS structure, page design, graphics and video.
+Marketing Associate, covering the website, brand and digital assets, on a founding team of four alongside the two co-founders and the operations manager. I owned site architecture, CMS structure, page design, graphics and video.
 
 I did not write the articles. Copy came from the team and, later, from clinical partners.
 
@@ -29,7 +29,9 @@ I did not write the articles. Copy came from the team and, later, from clinical 
 
 ### Turn a brochure into a content platform
 
-I built out roughly 20 CMS collections so the site could hold depth instead of pitching: articles, treatment guides, quick facts, FAQs, team members, authors, categories, careers. Live today: **7 articles, 3 treatment guides, 16 treatment quick facts, 16 FAQs, 8 team members.**
+I built out roughly 20 CMS collections so the site could hold depth instead of pitching: articles, treatment guides, quick facts, FAQs, team members, authors, categories, careers, events.
+
+Live today: **7 articles, 4 treatment guides, 22 treatment quick facts, 16 FAQs, 8 team members, 5 categories.**
 
 ### Human copy inside a clinical approval gate
 
@@ -41,7 +43,7 @@ Once we partnered with a clinic, I set up a workflow where treatment guides go t
 
 ### Put faces on the site
 
-A team page, with eight people on it. In a cross-border business where the underlying fear is *is this real*, showing who is actually there does more work than any paragraph of copy.
+A team page, with eight people on it — co-founders, operations, medical governance, marketing. In a cross-border business where the underlying fear is *is this real*, showing who is actually there does more work than any paragraph of copy.
 
 ### Lead with process, hold back price
 
@@ -49,11 +51,13 @@ Treatment guides open with process and facts. There is no pricing anywhere on th
 
 I hold this as an open question rather than a settled decision. Cost is a large part of why an international couple is looking at Ghana at all, and a page with no price signal may be filtering out people who would have qualified.
 
-### Stop building, and use Luma
+### Build the index, not the template
 
-I set out to build an events template in the CMS. Every event needed a different structure, and no standard shape existed that didn't require fresh CMS setup each time. So I stopped and moved events to Luma.
+I set out to build a full events template in the CMS. Every event needed a different structure, and no standard shape existed that didn't require fresh CMS setup each time.
 
-Building it would have produced a template nobody could maintain. The right call, reached later than it should have been.
+So I built the events index — filterable by location and status — and moved event detail to Luma rather than forcing a template that nobody could maintain. The index does the discovery job on our own site; Luma does the registration job it's already good at.
+
+The right call, reached later than it should have been.
 
 ## Part two — what the numbers showed
 
@@ -97,10 +101,16 @@ So the number that looked like performance was measuring the dump, and the numbe
 3. **Give the library an entry point.** Seven articles nobody lands on is a distribution problem, not a content problem.
 4. **Test a price signal.** Not a price list — a range, or a comparison. The current zero-signal approach is untested either way.
 
+## What I found on the way
+
+While pulling screenshots for this write-up I checked the colour contrast on the treatment guide body sections. White text was sitting on a mid-orange band that measured well below the 4.5:1 WCAG AA minimum for body copy — on the longest reading passage on the page, for an audience that skews anxious and older.
+
+Changing the band to a deep olive brought it above 7:1, which clears AA comfortably and AAA for most of the text. The layout didn't need to change at all.
+
+Worth saying because it's the pattern: the design decision was sound, the colour value wasn't, and nobody catches that by looking. You have to measure it.
+
 ## What I'd take from it
 
 I spent most of my time here building capability: collections, templates, an approval workflow, a brand. All of that was needed and it holds up.
 
 But the funnel was routing around it, and I didn't find that until I went looking at landing-page engagement rather than totals. The lesson is cheap to state and expensive to learn: building the thing and getting people to it are two separate jobs, and the second one is easier to skip because the first one feels like progress.
-
----
