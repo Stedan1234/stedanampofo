@@ -24,7 +24,7 @@ export const flags = {
   services: true,
   servicePricing: true,   // turn on once you've decided real numbers
   blog: true,
-  concierge: false,        // the AI assistant — first needs pricing
+  concierge: true,        // the AI assistant — first needs pricing
 } as const;
 
 export const disciplines = [
@@ -41,6 +41,14 @@ export const disciplines = [
     body: "Model-backed features built around what the product needs, and built to degrade gracefully when the model doesn't cooperate.",
   },
 ];
+
+// Shared with the API route AND the client component. Kept here because
+// lib/concierge.ts must never be imported client-side — it holds the
+// system prompt and would ship the whole knowledge base to the browser.
+export const conciergeLimits = {
+  maxTurns: 8,
+  maxCharsPerMessage: 600,
+} as const;
 
 export const processSteps = [
   {
