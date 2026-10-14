@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mark } from "./Mark";
-import { site } from "@/lib/site";
+import { Concierge } from "./Concierge";
+import { flags, site } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -36,6 +37,8 @@ export function Hero() {
           <Mark draw className="ml-auto block w-full max-w-[110px] text-accent md:max-w-[230px]" />
         </div>
       </div>
+
+      {flags.concierge && <Concierge />}
     </header>
   );
 }
