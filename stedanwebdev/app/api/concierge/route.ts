@@ -60,8 +60,33 @@ async function callOpenAI(system: string, messages: Msg[], maxTokens: number) {
   return (data.choices?.[0]?.message?.content ?? "").trim();
 }
 
+/**
+ * Which provider to call, worked out from which key is actually present.
+ *
+ * This used to read CONCIERGE_PROVIDER and default to "anthropic". Forgetting
+ * that one variable in a deployment silently sent every request to Anthropic
+ * with an undefined key — a 401 that surfaced as a generic 502. The key that
+ * exists is a better signal than a variable that has to be remembered.
+ * CONCIERGE_PROVIDER still wins if set, for when both keys are present.
+ */
+function resolveProvider(): "openai" | "anthropic" {
+  const explicit = (process.env.CONCIERGE_PROVIDER || "").toLowerCase();
+  if (explicit === "openai" || explicit === "anthropic") return explicit;
+  if (process.env.CONCIERGE_OPENAI_KEY) return "openai";
+  if (process.env.ANTHROPIC_API_KEY) return "anthropic";
+  throw new Error(
+    "no provider key set — expected CONCIERGE_OPENAI_KEY or ANTHROPIC_API_KEY"
+  );
+}
+
 function complete(system: string, messages: Msg[], maxTokens: number) {
-  const provider = (process.env.CONCIERGE_PROVIDER || "anthropic").toLowerCase();
+  const provider = resolveProvider();
+  if (provider === "openai" && !process.env.CONCIERGE_OPENAI_KEY) {
+    throw new Error("provider is openai but CONCIERGE_OPENAI_KEY is not set");
+  }
+  if (provider === "anthropic" && !process.env.ANTHROPIC_API_KEY) {
+    throw new Error("provider is anthropic but ANTHROPIC_API_KEY is not set");
+  }
   return provider === "openai"
     ? callOpenAI(system, messages, maxTokens)
     : callAnthropic(system, messages, maxTokens);
