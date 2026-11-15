@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Logo } from './Logo';
 import { ThemeToggle } from './ThemeToggle';
@@ -14,6 +15,7 @@ const links = [
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className='sticky top-0 z-50 border-b border-line bg-[color-mix(in_srgb,var(--paper)_88%,transparent)] backdrop-blur-md'>
@@ -27,7 +29,8 @@ export function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className='transition hover:text-accent-text'
+              aria-current={pathname.startsWith(l.href) ? 'page' : undefined}
+              className='nav-link transition hover:text-accent-text'
             >
               {l.label}
             </Link>

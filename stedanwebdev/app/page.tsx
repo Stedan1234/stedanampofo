@@ -2,7 +2,8 @@ import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { Interlace } from "@/components/Interlace";
 import { Reveal } from "@/components/Reveal";
-import { CaseCard } from "@/components/CaseCard";
+import { CaseGrid } from "@/components/CaseGrid";
+import { Bench } from "@/components/Bench";
 import { Process } from "@/components/Process";
 import { FAQ } from "@/components/FAQ";
 import { CTA } from "@/components/CTA";
@@ -56,14 +57,12 @@ export default function Home() {
                 All work
               </Link>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {cases.map((c) => (
-                <CaseCard key={c.slug} doc={c} />
-              ))}
-            </div>
+            <CaseGrid docs={cases} />
           </div>
         </Reveal>
       )}
+
+      <Bench />
 
       {flags.services && (
         <Process

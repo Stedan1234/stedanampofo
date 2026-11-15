@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
+import { CopyEmail } from "@/components/CopyEmail";
 import { Interlace } from "@/components/Interlace";
 import { site } from "@/lib/site";
 
@@ -24,7 +25,7 @@ export default function Contact() {
         <ContactForm />
         <div className="border-t border-line pt-6 text-[15.5px]">
           <p className="mb-1 text-[13px] text-ink-soft">Email</p>
-          <a href={`mailto:${site.email}`} className="text-accent-text hover:underline">{site.email}</a>
+          <CopyEmail />
           <p className="mb-1 mt-6 text-[13px] text-ink-soft">Elsewhere</p>
           <a href={site.socials.linkedin} target="_blank" rel="noopener" className="block hover:text-accent-text">LinkedIn</a>
           <a href={site.socials.github} target="_blank" rel="noopener" className="block hover:text-accent-text">GitHub</a>

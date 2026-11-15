@@ -16,6 +16,8 @@ export type Doc = {
   year?: string;
   tags: string[];
   cover?: string;
+  /** work/ only. Headline numbers shown under the cover and on the featured card. */
+  stats: { value: string; label: string }[];
   draft: boolean;
   body: string;
 };
@@ -42,6 +44,7 @@ function readAll(kind: Kind): Doc[] {
         year: data.year ? String(data.year) : "",
         tags: data.tags ?? [],
         cover: data.cover ?? "",
+        stats: Array.isArray(data.stats) ? data.stats : [],
         draft: Boolean(data.draft),
         body: content,
       } as Doc;

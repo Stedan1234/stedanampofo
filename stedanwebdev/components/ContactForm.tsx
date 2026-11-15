@@ -1,6 +1,7 @@
 "use client";
 import { useForm, ValidationError } from "@formspree/react";
 import { site } from "@/lib/site";
+import { CopyEmail } from "./CopyEmail";
 
 const field =
   "w-full rounded-[3px] border border-line bg-paper-2 px-4 py-3 text-[15.5px] text-ink outline-none transition focus:border-accent";
@@ -11,9 +12,7 @@ export function ContactForm() {
   if (!site.formspreeId) {
     return (
       <div className="rounded-[3px] border border-line bg-paper-2 p-6 text-[15px] text-ink-soft">
-        The form isn&apos;t connected yet. Set <code>NEXT_PUBLIC_FORMSPREE_ID</code> in your
-        environment variables, or email{" "}
-        <a href={`mailto:${site.email}`} className="text-accent-text">{site.email}</a> in the meantime.
+        The form is offline at the moment. Email me directly instead: <CopyEmail />
       </div>
     );
   }

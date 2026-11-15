@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CaseCard } from "@/components/CaseCard";
+import { CaseGrid } from "@/components/CaseGrid";
 import { CTA } from "@/components/CTA";
 import { Interlace } from "@/components/Interlace";
 import { getDocs } from "@/lib/content";
@@ -33,11 +33,7 @@ export default function WorkIndex() {
             is to ask.
           </p>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {docs.map((d) => (
-              <CaseCard key={d.slug} doc={d} />
-            ))}
-          </div>
+          <CaseGrid docs={docs} />
         )}
       </section>
 

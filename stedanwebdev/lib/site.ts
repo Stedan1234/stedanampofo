@@ -17,6 +17,8 @@ export const site = {
     github: "https://github.com/Stedan1234",
   },
   formspreeId: process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "",
+  /** Shown as the status line in the hero. Set to "" to hide it. */
+  availability: "Open for one new project",
 };
 
 export const flags = {
@@ -39,6 +41,31 @@ export const disciplines = [
   {
     title: "AI systems",
     body: "Model-backed features built around what the product needs, and built to degrade gracefully when the model doesn't cooperate.",
+  },
+];
+
+/**
+ * "On the bench" on the home page: what's being built right now.
+ * Keep it true. Remove a line when it stops being current; an empty
+ * array hides the whole section.
+ */
+export const bench: { title: string; body: string; status: string; live?: boolean; href?: string }[] = [
+  {
+    title: "Project concierge",
+    body: "The assistant at the top of this page. Pricing is computed in code, so the model never sees a figure and can't invent one.",
+    status: "Live on this site",
+    live: true,
+    href: "/#concierge",
+  },
+  {
+    title: "Moodloom",
+    body: "A reference board for designers. Save anything to the project it's for, then write the direction down beside it.",
+    status: "In private testing",
+  },
+  {
+    title: "StedFit",
+    body: "A fitness app, built brand-first: strategy, mark, palette and type before a single product screen.",
+    status: "In design",
   },
 ];
 

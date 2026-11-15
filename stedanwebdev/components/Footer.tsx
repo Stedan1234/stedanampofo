@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Logo } from './Logo';
 import { flags, site } from "@/lib/site";
 import Image from "next/image";
+import { LocalTime } from './LocalTime';
 
 export function Footer() {
   const links = [
@@ -19,10 +20,13 @@ export function Footer() {
           <Link href='/' aria-label='Stedan — home' className='shrink-0'>
             <Logo className='h-[26px] w-auto text-ink transition-opacity hover:opacity-80' />
           </Link>
-          <p className='max-w-[24em] text-[14.5px] text-ink-soft'>
+          <p className='mt-4 max-w-[24em] text-[14.5px] text-ink-soft'>
             {site.role}
           </p>
-          <p className='mt-1 text-[14.5px] text-ink-soft'>{site.location}</p>
+          <p className='mt-1 text-[14.5px] text-ink-soft'>
+            {site.location}
+            <LocalTime />
+          </p>
         </div>
         <a
           href='https://websitelaunches.com/site/stedan.site'
